@@ -97,7 +97,6 @@ public class Table extends JFrame {
             public void actionPerformed(ActionEvent actionEvent) {
                 try {
                      fix = JTableUtils.readBooleanArrayFromJTable(booleanTable);
-                    System.out.println(Arrays.toString(fix));
                 } catch (Exception e) {
                     SwingUtils.showErrorMessageBox(e);
                 }
@@ -108,7 +107,6 @@ public class Table extends JFrame {
             public void actionPerformed(ActionEvent actionEvent) {
                 try {
                     Integer[] array = Arrays.stream(JTableUtils.readIntArrayFromJTable(inputTable)).boxed().toArray( Integer[]::new );
-                    System.out.println(Arrays.toString(array));
                     Boolean[] fixed = fix;
                     Main.sort(array,fixed);
                     JTableUtils.writeArrayToJTable(outputTable,ArrayUtils.toPrimitive(array));
